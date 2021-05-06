@@ -52,33 +52,31 @@ const titles = document.getElementsByClassName('title');
 // })
 
 
+// ********Text content
+// changing the text in HTML element using the .textContent property
 
-
-
-// converted titles to an array
-// const titles = Array.from(document.getElementsByClassName('title')) ;
-
-
-
-// we can with the titles in various ways, since it contains more thgan one element
-
-
-
-// Using the forEach method but this wont wont work because titles is not an actual array
-
-// titles.array.forEach(element => {
-//     console.log(titles[element])
-    
+// const books = document.querySelectorAll('#book-list li .name');
+// books.forEach(function(items){
+//     items.textContent += " book title"
 // });
 
-// const titleArray = Array.from(titles);
+// ***** innerHtML property
+//  this properety can be used to change the HTML inside any HTML elemnet it is used to target
+// const bookList = document.querySelector('#book-list ul');
+// bookList.innerHTML += '<li> I am groot </li>'
 
-// console.log(titleArray);
+// *********** Nodes
+//  Every thing on the HTML page is a type of node 
+// Node types have number values
 
-// Array.from(titles).forEach(function(e){  
-//     console.log(e);
-// });
+const banner = document.querySelector('#page-banner');
 
-// a way to check if an element is an array
-// console.log (Array.isArray(titles));
+console.log(banner.nodeType); //this property returns the node value of the targeted node
+console.log(banner.nodeName); //returns the node name
+console.log(banner.hasChildNodes()); //return true or false, if the node has child nodes
+
+// we can clone nodes, which is very simple by the way
+const cloneBanner = banner.cloneNode(true); //it is very important to pass the argument as true, if there is no true it wont clone the child nodes
+console.log(cloneBanner)
+
 
