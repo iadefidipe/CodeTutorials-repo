@@ -119,9 +119,40 @@ btns.forEach(function(btn){
 
 const link = document.querySelector('#page-banner a');
 
-link.addEventListener('click', funtion(e){
-    e.preventDeault(); //this prevent normal default functions
+link.addEventListener('click', function(e){
+    e.preventDefault() ; //this prevent normal default functions
+    console.log('navigation to ', e.target.textContent, ' was prevented')
 })
+
+const list = document.querySelector('#book-list ul')
+// **** Interacting with forms
+const addForm = document.forms['add-book']; //this is how to ineract with a form in DOM
+
+addForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    const value = addForm.querySelector('input[type ="text"]').value;
+    console.log(value); 
+
+    // **** Creating elements
+
+    const li = document.createElement('li');
+    const bookName = document.createElement('span');
+    const deleteBtn = document.createElement('span');
+     
+    // add content
+
+    bookName.textContent = value;
+    deleteBtn.textContent =  'delete';
+    //  append to document
+
+    li.appendChild(bookName);
+    li.appendChild(deleteBtn);
+    list.appendChild(li);
+    
+})
+
+
+
 
 
 
