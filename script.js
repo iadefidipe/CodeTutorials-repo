@@ -14,7 +14,7 @@ const restaurant = {
 
   order: function(starterIndex, mainIndex){
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-  }
+  },
 
 //   openingHours: {
 //     thu: {
@@ -30,62 +30,119 @@ const restaurant = {
 //       close: 24,
 //     },
 //   },
+
+  orderPasta: function(ing1,ing2,ing3){
+    console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}`);
+  }
 };
 
-// TODO: Learning destructuring
+// // TODO: Learning destructuring
 
-const arr = [2,3,4];
-//  todo: retriviing elements with destructuring is like
-// const a = arr[0];
-// const b = arr[1];
-// const c = arr[2];
+// // const arr = [2,3,4];
+// //  todo: retriviing elements with destructuring is like
+// // const a = arr[0];
+// // const b = arr[1];
+// // const c = arr[2];
 
-// todo: but now with destructuring we can declare all variables at once
-const [x,y,z] = arr; // this is a destructuring assignment
+// // todo: but now with destructuring we can declare all variables at once
+// // const [x,y,z] = arr; // this is a destructuring assignment
 
-let [first,second] = restaurant.categories;
+// let [first,second] = restaurant.categories;
 
-const [main , , secondary] = restaurant.categories; // this will select the first and third element
+// const [main , , secondary] = restaurant.categories; // this will select the first and third element
 
-// TODO: Switching variable (mutating variable in arrays)
-[first, second] = [second,first]; // Switching can be done easily with destructuring
+// // TODO: Switching variable (mutating variable in arrays)
+// [first, second] = [second,first]; // Switching can be done easily with destructuring
 
-// TODO: destructuring the result of the order method of the resturant object
+// // TODO: destructuring the result of the order method of the resturant object
 
-const [start, mains] = restaurant.order(2,2);
-console.log(start, mains);
+// const [start, mains] = restaurant.order(2,2);
+// console.log(start, mains);
 
-// todo: destructuring a nested array (nested destruturing)
-const nested = [2,4, [5,6]];
-const [i, , [j,k]] = nested;
-console.log( j,k);
-
-
-// TODO: destructuring Objects
-const  {name, openingHours, categories} = restaurant;
-console.log(name, openingHours, categories);
-
-//  todo: if want the variable names to be different from the property names of the object
-const{name:resturantName, openingHours:Hours, categories:tags} = restaurant;
-console.log(resturantName, Hours, tags);
-
-// TODO: setting default  value for properties that doest exist in the object
-
-const {menu = [2,3,4], starterMenu:starters =[]} = restaurant; // so menu isnt a property of the resturant object, so it is given a default value just incase we cant find it in object resturant, like starterMenu is actually a property accesible in resturant but it was given a default value just in case its not a property in the object
-
-// TODO: mutating variables in obejects
-
-let a = 232;
-let b = 457;
-const obj = { a:34, b:23, c:32 };
-({a,b} = obj); // it is compulsory to enclose the mutation assignment when working with object in parenthesispush, or it wont work
-
-console.log(a,b);
+// // todo: destructuring a nested array (nested destruturing)
+// const nested = [2,4, [5,6]];
+// const [i, , [j,k]] = nested;
+// console.log( j,k);
 
 
-// TODO: Destructuring Nested object
-const {
-  fri: {open:c, close:h}
-} = openingHours // this is the synthax for achieving this particular process
+// // TODO: destructuring Objects
+// const  {name, openingHours, categories} = restaurant;
+// console.log(name, openingHours, categories);
 
-console.log(c,h);
+// //  todo: if want the variable names to be different from the property names of the object
+// const{name:resturantName, openingHours:Hours, categories:tags} = restaurant;
+// console.log(resturantName, Hours, tags);
+
+// // TODO: setting default  value for properties that doest exist in the object
+
+// const {menu = [2,3,4], starterMenu:starters =[]} = restaurant; // so menu isnt a property of the resturant object, so it is given a default value just incase we cant find it in object resturant, like starterMenu is actually a property accesible in resturant but it was given a default value just in case its not a property in the object
+
+// // TODO: mutating variables in obejects
+
+// let a = 232;
+// let b = 457;
+// const obj = { a:34, b:23, c:32 };
+// ({a,b} = obj); // it is compulsory to enclose the mutation assignment when working with object in parenthesispush, or it wont work
+
+// console.log(a,b);
+
+
+// // TODO: Destructuring Nested object
+// const {
+//   fri: {open:c, close:h}
+// } = openingHours // this is the synthax for achieving this particular process
+
+// console.log(c,h);
+
+
+// TODO: SPREAD OPERATOR (...) (ES6)
+
+const arr = [ 4,5,6]; // if we wanted to create a new array that will have the individual elements in array arr as its own member
+
+//  how it will be done manually
+ const badNewArr = [1,2,3, arr[0], arr[1],arr[2]];
+ console.log(badNewArr);
+
+//   this is can be achieved in shorter and more effective way using the spread operator
+const newArr = [1,2,3, ...arr]; // so the spread operator will add the individual elements of arr to newArr
+console.log(newArr);
+
+// also check this out
+console.log(...newArr); // this will only log the individual element of newArr
+
+//  TODO NOTE: the spread operator works like destructuring but it doesnt store values in variables. so it only used incase when you want to add elements seperated by commas
+
+// TODO: USE CASE OF SPREAD OPERATORS
+
+// Copy arrays
+
+const mainMenuCopy = [...restaurant.mainMenu];
+
+// join 2 arrays
+const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+
+// TODO notes: Iterables: arrays, strings,,maps, sets, NOT Objects. *****Spread operator can work on all iterables in JS, we can only use the spread operator when building an array or paasing arguments into a function
+
+const str = 'Israel';
+const letters = [...str, '', 'r'];
+console.log(...str);
+// console.log(`${...str} Adefidpe`); this wont work because the spread operator is not applicable in this case
+
+//  TODO: using spread operator to pass argument into a function
+const ingredients = [
+  // prompt("Let's make pasta! Ingrdient 1?"),
+  // prompt('Ingrdient 2?'),
+  // prompt('Ingrdient 3?'),
+];
+
+console.log(ingredients);
+
+console.log(restaurant.orderPasta(...ingredients)); 
+
+// TODO: using spread operator on Objects
+
+const newRestaurant = {foundeIn: '1983', ...restaurant};
+console.log(newRestaurant);
+
+const resturantCopy = {...restaurant};
+resturantCopy.name = 'resturant'
