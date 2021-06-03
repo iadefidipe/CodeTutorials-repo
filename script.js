@@ -16,23 +16,28 @@ const restaurant = {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
-//   openingHours: {
-//     thu: {
-//       open: 12,
-//       close: 22,
-//     },
-//     fri: {
-//       open: 11,
-//       close: 23,
-//     },
-//     sat: {
-//       open: 0, // Open 24 hours
-//       close: 24,
-//     },
-//   },
+  openingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0, // Open 24 hours
+      close: 24,
+    },
+  },
 
   orderPasta: function(ing1,ing2,ing3){
     console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}`);
+  }, 
+
+  orderPizza: function (mainIngredients, ...otherIngredients){
+    console.log(mainIngredients);
+    console.log(otherIngredients);
   }
 };
 
@@ -95,54 +100,85 @@ const restaurant = {
 // console.log(c,h);
 
 
-// TODO: SPREAD OPERATOR (...) (ES6)
+// // TODO: SPREAD OPERATOR (...) (ES6)
 
-const arr = [ 4,5,6]; // if we wanted to create a new array that will have the individual elements in array arr as its own member
+// const arr = [ 4,5,6]; // if we wanted to create a new array that will have the individual elements in array arr as its own member
 
-//  how it will be done manually
- const badNewArr = [1,2,3, arr[0], arr[1],arr[2]];
- console.log(badNewArr);
+// //  how it will be done manually
+//  const badNewArr = [1,2,3, arr[0], arr[1],arr[2]];
+//  console.log(badNewArr);
 
-//   this is can be achieved in shorter and more effective way using the spread operator
-const newArr = [1,2,3, ...arr]; // so the spread operator will add the individual elements of arr to newArr
-console.log(newArr);
+// //   this is can be achieved in shorter and more effective way using the spread operator
+// const newArr = [1,2,3, ...arr]; // so the spread operator will add the individual elements of arr to newArr
+// console.log(newArr);
 
-// also check this out
-console.log(...newArr); // this will only log the individual element of newArr
+// // also check this out
+// console.log(...newArr); // this will only log the individual element of newArr
 
-//  TODO NOTE: the spread operator works like destructuring but it doesnt store values in variables. so it only used incase when you want to add elements seperated by commas
+// //  TODO NOTE: the spread operator works like destructuring but it doesnt store values in variables. so it only used incase when you want to add elements seperated by commas
 
-// TODO: USE CASE OF SPREAD OPERATORS
+// // TODO: USE CASE OF SPREAD OPERATORS
 
-// Copy arrays
+// // Copy arrays
 
-const mainMenuCopy = [...restaurant.mainMenu];
+// const mainMenuCopy = [...restaurant.mainMenu];
 
-// join 2 arrays
-const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+// // join 2 arrays
+// const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
 
-// TODO notes: Iterables: arrays, strings,,maps, sets, NOT Objects. *****Spread operator can work on all iterables in JS, we can only use the spread operator when building an array or paasing arguments into a function
+// // TODO notes: Iterables: arrays, strings,,maps, sets, NOT Objects. *****Spread operator can work on all iterables in JS, we can only use the spread operator when building an array or paasing arguments into a function
 
-const str = 'Israel';
-const letters = [...str, '', 'r'];
-console.log(...str);
-// console.log(`${...str} Adefidpe`); this wont work because the spread operator is not applicable in this case
+// const str = 'Israel';
+// const letters = [...str, '', 'r'];
+// console.log(...str);
+// // console.log(`${...str} Adefidpe`); this wont work because the spread operator is not applicable in this case
 
-//  TODO: using spread operator to pass argument into a function
-const ingredients = [
-  // prompt("Let's make pasta! Ingrdient 1?"),
-  // prompt('Ingrdient 2?'),
-  // prompt('Ingrdient 3?'),
-];
+// //  TODO: using spread operator to pass argument into a function
+// const ingredients = [
+//   // prompt("Let's make pasta! Ingrdient 1?"),
+//   // prompt('Ingrdient 2?'),
+//   // prompt('Ingrdient 3?'),
+// ];
 
-console.log(ingredients);
+// console.log(ingredients);
 
-console.log(restaurant.orderPasta(...ingredients)); 
+// console.log(restaurant.orderPasta(...ingredients)); 
 
-// TODO: using spread operator on Objects
+// // TODO: using spread operator on Objects
 
-const newRestaurant = {foundeIn: '1983', ...restaurant};
-console.log(newRestaurant);
+// const newRestaurant = {foundeIn: '1983', ...restaurant};
+// console.log(newRestaurant);
 
-const resturantCopy = {...restaurant};
-resturantCopy.name = 'resturant'
+// const resturantCopy = {...restaurant};
+// resturantCopy.name = 'resturant'
+
+
+// TODO: Rest pattern and parameter
+
+// Rest operator is the opposite of the spread operator. Spread is used to unpack element from the ooperator while rest is used to pack elements into an operator
+
+// Spread operator is always on the RIGHT of the =
+const arr = [1,2, ...[3,4]];
+
+// REST, on LEFT side of =
+// TODO: Destructuring with  rest operator ********spread==expend *****rest==compress
+const[a,b, ...others] = [1,2,3,4,5,6];
+console.log(a,b,others);
+
+const [Pizza, , Risotto, ...otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(pizza,Risotto, otherFood);
+
+// objects
+const {sat, ...weekdays} = restaurant.openingHours;
+
+// TODO: using rest parameters in funtions
+const add = function (...numbers) {
+  let sum = 0;
+  for(let i = 0; i < numbers.length; i++)
+  sum += numbers[i];
+  console.log(sum);
+};
+
+add(2,4,5);
+
+restaurant.orderPizza('mushrooms', 'carrot', 'garlic');
