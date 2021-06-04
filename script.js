@@ -41,10 +41,10 @@ const restaurant = {
   }
 };
 
-// // TODO: Learning destructuring
+ // TODO: Learning destructuring
 
-// // const arr = [2,3,4];
-// //  todo: retriviing elements with destructuring is like
+ // const arr = [2,3,4];
+//  todo: retriviing elements with destructuring is like
 // // const a = arr[0];
 // // const b = arr[1];
 // // const c = arr[2];
@@ -80,14 +80,14 @@ const restaurant = {
 
 // // TODO: setting default  value for properties that doest exist in the object
 
-// const {menu = [2,3,4], starterMenu:starters =[]} = restaurant; // so menu isnt a property of the resturant object, so it is given a default value just incase we cant find it in object resturant, like starterMenu is actually a property accesible in resturant but it was given a default value just in case its not a property in the object
+// const {menu = [], starterMenu:starters =[]} = restaurant; // so menu isnt a property of the resturant object, so it is given a default value just incase we cant find it in object resturant, like starterMenu is actually a property accesible in resturant but it was given a default value just in case its not a property in the object
 
 // // TODO: mutating variables in obejects
 
 // let a = 232;
 // let b = 457;
 // const obj = { a:34, b:23, c:32 };
-// ({a,b} = obj); // it is compulsory to enclose the mutation assignment when working with object in parenthesispush, or it wont work
+// ({a,b} = obj); // it is compulsory to enclose the mutation assignment when working with object in parenthesis, or it wont work
 
 // console.log(a,b);
 
@@ -115,7 +115,7 @@ const restaurant = {
 // // also check this out
 // console.log(...newArr); // this will only log the individual element of newArr
 
-// //  TODO NOTE: the spread operator works like destructuring but it doesnt store values in variables. so it only used incase when you want to add elements seperated by commas
+// //  TODO NOTE: the spread operator works like destructuring but it doesnt store values in variables. so it is only used incase when you want to add elements seperated by commas
 
 // // TODO: USE CASE OF SPREAD OPERATORS
 
