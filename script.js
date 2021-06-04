@@ -153,32 +153,48 @@ const restaurant = {
 // resturantCopy.name = 'resturant'
 
 
-// TODO: Rest pattern and parameter
+// // TODO: Rest pattern and parameter
 
-// Rest operator is the opposite of the spread operator. Spread is used to unpack element from the ooperator while rest is used to pack elements into an operator
+// // Rest operator is the opposite of the spread operator. Spread is used to unpack element from the ooperator while rest is used to pack elements into an operator
 
-// Spread operator is always on the RIGHT of the =
-const arr = [1,2, ...[3,4]];
+// // Spread operator is always on the RIGHT of the =
+// const arr = [1,2, ...[3,4]];
 
-// REST, on LEFT side of =
-// TODO: Destructuring with  rest operator ********spread==expend *****rest==compress
-const[a,b, ...others] = [1,2,3,4,5,6];
-console.log(a,b,others);
+// // REST, on LEFT side of =
+// // TODO: Destructuring with  rest operator ********spread==expend *****rest==compress
+// const[a,b, ...others] = [1,2,3,4,5,6];
+// console.log(a,b,others);
 
-const [Pizza, , Risotto, ...otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu];
-console.log(pizza,Risotto, otherFood);
+// const [Pizza, , Risotto, ...otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu];
+// console.log(pizza,Risotto, otherFood);
 
-// objects
-const {sat, ...weekdays} = restaurant.openingHours;
+// // objects
+// const {sat, ...weekdays} = restaurant.openingHours;
 
-// TODO: using rest parameters in funtions
-const add = function (...numbers) {
-  let sum = 0;
-  for(let i = 0; i < numbers.length; i++)
-  sum += numbers[i];
-  console.log(sum);
-};
+// // TODO: using rest parameters in funtions
+// const add = function (...numbers) {
+//   let sum = 0;
+//   for(let i = 0; i < numbers.length; i++)
+//   sum += numbers[i];
+//   console.log(sum);
+// };
 
-add(2,4,5);
+// add(2,4,5);
 
-restaurant.orderPizza('mushrooms', 'carrot', 'garlic');
+// restaurant.orderPizza('mushrooms', 'carrot', 'garlic');
+
+
+// TODO: SHORT CIRCUITING (&& and ||)// Short circuit evaluation
+
+one thing to know about logical operators is that they cannot only just return just boolean values, they can USE ANY DATA TYPE, RETURN ANY DATA TYPE, and also perform SHORT CIRCUITING
+
+SHORT CIRCUITING: for an || operator, in short circuiting, if the two values evaluated are truthy, it will return the first truthy value without evaluating the oher truthy value
+the && operator short circuits when the first is falsy
+
+TOD0: Nullish coalescing operator. Nullish values are Null and Undefined. Only nullish values will short circuit using this operator
+
+const nullish = '' ?? 10;
+
+
+
+
