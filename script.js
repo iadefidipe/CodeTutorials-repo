@@ -5,41 +5,41 @@ const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
 // Data needed for first part of the section
-const restaurant = {
-  name: 'Classico Italiano',
-  location: 'Via Angelo Tavanti 23, Firenze, Italy',
-  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+// const restaurant = {
+//   Name: 'Classico Italiano',
+//   location: 'Via Angelo Tavanti 23, Firenze, Italy',
+//   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+//   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+//   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-  order: function(starterIndex, mainIndex){
-    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-  },
+//   order: function(starterIndex, mainIndex){
+//     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+//   },
 
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
+//   openingHours: {
+//     thu: {
+//       open: 12,
+//       close: 22,
+//     },
+//     fri: {
+//       open: 11,
+//       close: 23,
+//     },
+//     sat: {
+//       open: 0, // Open 24 hours
+//       close: 24,
+//     },
+//   },
 
-  orderPasta: function(ing1,ing2,ing3){
-    console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}`);
-  }, 
+//   orderPasta: function(ing1,ing2,ing3){
+//     console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}`);
+//   }, 
 
-  orderPizza: function (mainIngredients, ...otherIngredients){
-    console.log(mainIngredients);
-    console.log(otherIngredients);
-  }
-};
+//   orderPizza: function (mainIngredients, ...otherIngredients){
+//     console.log(mainIngredients);
+//     console.log(otherIngredients);
+//   }
+// };
 
  // TODO: Learning destructuring
 
@@ -71,8 +71,8 @@ const restaurant = {
 
 
 // // TODO: destructuring Objects
-// const  {name, openingHours, categories} = restaurant;
-// console.log(name, openingHours, categories);
+// const  {Name, openingHours, categories} = restaurant;
+// console.log(Name, openingHours, categories);
 
 // //  todo: if want the variable names to be different from the property names of the object
 // const{name:resturantName, openingHours:Hours, categories:tags} = restaurant;
@@ -81,6 +81,8 @@ const restaurant = {
 // // TODO: setting default  value for properties that doest exist in the object
 
 // const {menu = [], starterMenu:starters =[]} = restaurant; // so menu isnt a property of the resturant object, so it is given a default value just incase we cant find it in object resturant, like starterMenu is actually a property accesible in resturant but it was given a default value just in case its not a property in the object
+
+// console.log(menu, starters);
 
 // // TODO: mutating variables in obejects
 
@@ -94,8 +96,8 @@ const restaurant = {
 
 // // TODO: Destructuring Nested object
 // const {
-//   fri: {open:c, close:h}
-// } = openingHours // this is the synthax for achieving this particular process
+//   fri: { open: c, close: h },
+// } = restaurant.openingHours; // this is the synthax for achieving this particular process
 
 // console.log(c,h);
 
@@ -142,6 +144,8 @@ const restaurant = {
 
 // console.log(ingredients);
 
+// const ingredients = ["maggi", 'salt', 'pepper', 'goat']
+
 // console.log(restaurant.orderPasta(...ingredients)); 
 
 // // TODO: using spread operator on Objects
@@ -150,26 +154,28 @@ const restaurant = {
 // console.log(newRestaurant);
 
 // const resturantCopy = {...restaurant};
-// resturantCopy.name = 'resturant'
+// resturantCopy.Name = 'resturant'
+// console.log(resturantCopy);
 
 
 // // TODO: Rest pattern and parameter
 
 // // Rest operator is the opposite of the spread operator. Spread is used to unpack element from the ooperator while rest is used to pack elements into an operator
 
-// // Spread operator is always on the RIGHT of the =
+// // Spread operator is always on the RIGHT of the  asssigment operator (=)
 // const arr = [1,2, ...[3,4]];
+// console.log(arr);
 
-// // REST, on LEFT side of =
+// // REST, on LEFT side of the assigment operator (=)
 // // TODO: Destructuring with  rest operator ********spread==expend *****rest==compress
 // const[a,b, ...others] = [1,2,3,4,5,6];
 // console.log(a,b,others);
 
 // const [Pizza, , Risotto, ...otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu];
-// console.log(pizza,Risotto, otherFood);
+// console.log(Pizza,Risotto, otherFood);
 
 // // objects
-// const {sat, ...weekdays} = restaurant.openingHours;
+// const {sat, ...weekdays} = restaurant.openingHours; //wont work object are not iterables
 
 // // TODO: using rest parameters in funtions
 // const add = function (...numbers) {
@@ -186,14 +192,180 @@ const restaurant = {
 
 // TODO: SHORT CIRCUITING (&& and ||)// Short circuit evaluation
 
-one thing to know about logical operators is that they cannot only just return just boolean values, they can USE ANY DATA TYPE, RETURN ANY DATA TYPE, and also perform SHORT CIRCUITING
+// one thing to know about logical operators is that they cannot only just return just boolean values, they can USE ANY DATA TYPE, RETURN ANY DATA TYPE, and also perform SHORT CIRCUITING
 
-SHORT CIRCUITING: for an || operator, in short circuiting, if the two values evaluated are truthy, it will return the first truthy value without evaluating the oher truthy value
-the && operator short circuits when the first is falsy
+// SHORT CIRCUITING: for an || operator, in short circuiting, if the two values evaluated are truthy, it will return the first truthy value without evaluating the oher truthy value
+// the && operator short circuits when the first is falsy
 
-TOD0: Nullish coalescing operator. Nullish values are Null and Undefined. Only nullish values will short circuit using this operator
+// TOD0: Nullish coalescing operator. Nullish values are Null and Undefined. Only nullish values will short circuit using this operator
 
-const nullish = '' ?? 10;
+// const nullish = '' ?? 10;
+
+// TODO: Coding Challenge #1
+
+/* 
+We're building a football betting app (soccer for my American friends 😅)!
+
+Suppose we get data from a web service about a certain game (below). In this challenge we're gonna work with the data. So here are your tasks:
+
+1. Create one player array for each team (variables 'players1' and 'players2')
+2. The first player in any player array is the goalkeeper and the others are field players. For Bayern Munich (team 1) create one variable ('gk') with the goalkeeper's name, and one array ('fieldPlayers') with all the remaining 10 field players
+3. Create an array 'allPlayers' containing all players of both teams (22 players)
+4. During the game, Bayern Munich (team 1) used 3 substitute players. So create a new array ('players1Final') containing all the original team1 players plus 'Thiago', 'Coutinho' and 'Perisic'
+5. Based on the game.odds object, create one variable for each odd (called 'team1', 'draw' and 'team2')
+6. Write a function ('printGoals') that receives an arbitrary number of player names (NOT an array) and prints each of them to the console, along with the number of goals that were scored in total (number of player names passed in)
+7. The team with the lower odd is more likely to win. Print to the console which team is more likely to win, WITHOUT using an if/else statement or the ternary operator.
+
+TEST DATA FOR 6: Use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'. Then, call the function again with players from game.scored
+
+GOOD LUCK 😀
+*/
+
+// const game = {
+//   team1: 'Bayern Munich',
+//   team2: 'Borrussia Dortmund',
+//   players: [
+//     [
+//       'Neuer',
+//       'Pavard',
+//       'Martinez',
+//       'Alaba',
+//       'Davies',
+//       'Kimmich',
+//       'Goretzka',
+//       'Coman',
+//       'Muller',
+//       'Gnarby',
+//       'Lewandowski',
+//     ],
+//     [
+//       'Burki',
+//       'Schulz',
+//       'Hummels',
+//       'Akanji',
+//       'Hakimi',
+//       'Weigl',
+//       'Witsel',
+//       'Hazard',
+//       'Brandt',
+//       'Sancho',
+//       'Gotze',
+//     ],
+//   ],
+//   score: '4:0',
+//   scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+//   date: 'Nov 9th, 2037',
+//   odds: {
+//     team1: 1.33,
+//     x: 3.25,
+//     team2: 6.5,
+//   },
+
+//   printGoals: function(...players){
+//     console.log(players);
+//     console.log(`${players.length} goals were scored`);
+//   }
+// };
+
+// //  Todo: Solution
+
+// // 1.
+// const [players1,players2] = game.players;
+// console.log(players1, players2);
+
+// // 2.
+// const [ gk, ...fieldPlayers] = players1; //rest operator
+// console.log(gk, ...fieldPlayers);
+
+// // 3.
+// const allPlayers = [...players1,...players2]; //spread operator
+// console.log(allPlayers);
+
+// // 4.
+// const players1Final = [...players1, 'Thiago','Coutinho','Perisic'] //spread operstor
+// console.log(players1Final);
+
+// // 5.
+// const {odds:{team1, x:draw, team2}} = game; //destructuring 
+// console.log(team1, draw, team2);
+
+// //  6.
+// console.log(game.printGoals(...game.scored));
+
+// // 7.
+// team1 < team2 && console.log('Team 1 is more likely to win');
+// team1 > team2 && console.log('Team 2 is more likely to win');
+
+
+//  TODO: for-of loop
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+// for (const item of menu) console.log(item);
+// *** note: the for-of loop can still use the continue and break keyword
+
+// for (const [i, el] of menu.entries()){
+  // console.log(`${i + 1}: ${el}`);
+
+// }
+
+
+// TODO: Enhanced object literal
+// *** ES6 introduced a way three way to easily write object literals
+
+
+// *** 1.
+
+//**8 we could compute propety names
+
+const weekdays = ['wed','thur', 'fri', 'sat'];
+const openingHours = {
+    [weekdays[0]]: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0, // Open 24 hours
+      close: 24,
+    },
+  };
+
+const restaurant = {
+  Name: 'Classico Italiano',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+
+  // to set the openingHuours object as a propety of resturant:
+  // openingHours:openingHours, //*** this is how it would have been done in es5, but there is a better way in  es6
+  openingHours, //*** tjis is all you have to do in Es6, only that the name of the object you are referencing must be the same as the property name
+
+  // orderPasta: function(ing1,ing2,ing3){ //es5 way
+  //   console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}`);
+  // }, //also writing method like the above has also been enhanced in es6
+
+  orderPasta (ing1, ing2, ing3) {
+    console.log(
+      `Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}`
+    );
+  },
+
+  orderPizza (mainIngredients, ...otherIngredients) {
+    console.log(mainIngredients);
+    console.log(otherIngredients);
+  },
+};
+
+
+
 
 
 
