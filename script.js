@@ -298,13 +298,14 @@ GOOD LUCK 😀
 
 
 //  TODO: for-of loop
-// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// const menu = ['goat', 'catfish', 'dog', 'cat']
 
 // for (const item of menu) console.log(item);
-// *** note: the for-of loop can still use the continue and break keyword
+
+// // *** note: the for-of loop can still use the continue and break keyword
 
 // for (const [i, el] of menu.entries()){
-  // console.log(`${i + 1}: ${el}`);
+//   console.log(`${i + 1}: ${el}`);
 
 // }
 
@@ -319,7 +320,7 @@ GOOD LUCK 😀
 
 const weekdays = ['wed','thur', 'fri', 'sat'];
 const openingHours = {
-    [weekdays[0]]: {
+    thur: {
       open: 12,
       close: 22,
     },
@@ -363,6 +364,61 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+
+// TODO: Optional chaining
+// // console.log(restaurant.openingHours.mon.open);
+
+// console.log(restaurant.openingHours.mon?.open); //with optional chaning
+// console.log(restaurant.openingHours?.mon?.open); //multiple optional chaning
+
+// const days = ['mon', 'tue', 'wed', 'thur', 'fri', 'sat', 'sun'];
+
+// for (const day of days){
+//   // console.log(day);
+//   const open = restaurant.openingHours[day]?.open ?? 'closed'; //used nullish coalesing  operator here
+// console.log(`On ${day}, we open at ${open}`);
+// }
+
+// // optional chaining can work on methods todo
+// console.log(restaurant.order?.(0,2) ?? 'method doesnt exist'); 
+// console.log(restaurant.orderNci?.(0, 2) ?? 'method doesnt exist'); 
+
+// optional chainig on arrays, WE CAN USE IT TO CHECK IF AN array is empty
+
+// const user = [{name:'israel', email:'israeladefidipe@gmail.com'}]
+// console.log(user[0]?.name ?? 'array doesnt exist');
+// console.log(user[1]?.name ?? 'array doesnt exist');
+
+// TODO: Looping over objects
+
+// //*** property names */
+
+// const properties = Object.keys(openingHours);
+// console.log(properties);
+// let openStr = ` we are open on ${properties.length} days: `
+// for (const day of properties){
+//   console.log(day);
+//   openStr += `${day},`
+// }
+
+// console.log(openStr);
+
+
+// //*** propety values */
+// const values = Object.values(openingHours)
+// console.log(values);
+
+// *** property entries
+
+const entries = Object.entries(openingHours);
+// console.log(entries)
+
+for (const [key, {open,close}] of entries){
+  // console.log(x);
+  console.log(`on ${key}, we open at ${open} and close at ${close}`);
+}
+
+
 
 
 
