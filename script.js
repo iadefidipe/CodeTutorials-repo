@@ -33,7 +33,7 @@ const flights =
 
 //   orderPasta: function(ing1,ing2,ing3){
 //     console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}`);
-//   }, 
+//   },
 
 //   orderPizza: function (mainIngredients, ...otherIngredients){
 //     console.log(mainIngredients);
@@ -41,9 +41,9 @@ const flights =
 //   }
 // };
 
- // TODO: Learning destructuring
+// TODO: Learning destructuring
 
- // const arr = [2,3,4];
+// const arr = [2,3,4];
 //  todo: retriviing elements with destructuring is like
 // // const a = arr[0];
 // // const b = arr[1];
@@ -69,7 +69,6 @@ const flights =
 // const [i, , [j,k]] = nested;
 // console.log( j,k);
 
-
 // // TODO: destructuring Objects
 // const  {Name, openingHours, categories} = restaurant;
 // console.log(Name, openingHours, categories);
@@ -93,14 +92,12 @@ const flights =
 
 // console.log(a,b);
 
-
 // // TODO: Destructuring Nested object
 // const {
 //   fri: { open: c, close: h },
 // } = restaurant.openingHours; // this is the synthax for achieving this particular process
 
 // console.log(c,h);
-
 
 // // TODO: SPREAD OPERATOR (...) (ES6)
 
@@ -146,7 +143,7 @@ const flights =
 
 // const ingredients = ["maggi", 'salt', 'pepper', 'goat']
 
-// console.log(restaurant.orderPasta(...ingredients)); 
+// console.log(restaurant.orderPasta(...ingredients));
 
 // // TODO: using spread operator on Objects
 
@@ -156,7 +153,6 @@ const flights =
 // const resturantCopy = {...restaurant};
 // resturantCopy.Name = 'resturant'
 // console.log(resturantCopy);
-
 
 // // TODO: Rest pattern and parameter
 
@@ -188,7 +184,6 @@ const flights =
 // add(2,4,5);
 
 // restaurant.orderPizza('mushrooms', 'carrot', 'garlic');
-
 
 // TODO: SHORT CIRCUITING (&& and ||)// Short circuit evaluation
 
@@ -286,7 +281,7 @@ GOOD LUCK 😀
 // console.log(players1Final);
 
 // // 5.
-// const {odds:{team1, x:draw, team2}} = game; //destructuring 
+// const {odds:{team1, x:draw, team2}} = game; //destructuring
 // console.log(team1, draw, team2);
 
 // //  6.
@@ -295,7 +290,6 @@ GOOD LUCK 😀
 // // 7.
 // team1 < team2 && console.log('Team 1 is more likely to win');
 // team1 > team2 && console.log('Team 2 is more likely to win');
-
 
 //  TODO: for-of loop
 // const menu = ['goat', 'catfish', 'dog', 'cat']
@@ -309,61 +303,59 @@ GOOD LUCK 😀
 
 // }
 
-
 // TODO: Enhanced object literal
 // *** ES6 introduced a way three way to easily write object literals
-
 
 // *** 1.
 
 //**8 we could compute propety names
 
-const weekdays = ['wed','thur', 'fri', 'sat'];
-const openingHours = {
-    thur: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  };
+// const weekdays = ['wed','thur', 'fri', 'sat'];
+// const openingHours = {
+//     thur: {
+//       open: 12,
+//       close: 22,
+//     },
+//     fri: {
+//       open: 11,
+//       close: 23,
+//     },
+//     sat: {
+//       open: 0, // Open 24 hours
+//       close: 24,
+//     },
+//   };
 
-const restaurant = {
-  Name: 'Classico Italiano',
-  location: 'Via Angelo Tavanti 23, Firenze, Italy',
-  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+// const restaurant = {
+//   Name: 'Classico Italiano',
+//   location: 'Via Angelo Tavanti 23, Firenze, Italy',
+//   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+//   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+//   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-  order: function (starterIndex, mainIndex) {
-    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-  },
+//   order: function (starterIndex, mainIndex) {
+//     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+//   },
 
-  // to set the openingHuours object as a propety of resturant:
-  // openingHours:openingHours, //*** this is how it would have been done in es5, but there is a better way in  es6
-  openingHours, //*** tjis is all you have to do in Es6, only that the name of the object you are referencing must be the same as the property name
+// to set the openingHuours object as a propety of resturant:
+// openingHours:openingHours, //*** this is how it would have been done in es5, but there is a better way in  es6
+// openingHours, //*** tjis is all you have to do in Es6, only that the name of the object you are referencing must be the same as the property name
 
-  // orderPasta: function(ing1,ing2,ing3){ //es5 way
-  //   console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}`);
-  // }, //also writing method like the above has also been enhanced in es6
+// orderPasta: function(ing1,ing2,ing3){ //es5 way
+//   console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}`);
+// }, //also writing method like the above has also been enhanced in es6
 
-  orderPasta (ing1, ing2, ing3) {
-    console.log(
-      `Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}`
-    );
-  },
+//   orderPasta (ing1, ing2, ing3) {
+//     console.log(
+//       `Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}`
+//     );
+//   },
 
-  orderPizza (mainIngredients, ...otherIngredients) {
-    console.log(mainIngredients);
-    console.log(otherIngredients);
-  },
-};
+//   orderPizza (mainIngredients, ...otherIngredients) {
+//     console.log(mainIngredients);
+//     console.log(otherIngredients);
+//   },
+// };
 
 // TODO: Optional chaining
 // // console.log(restaurant.openingHours.mon.open);
@@ -380,8 +372,8 @@ const restaurant = {
 // }
 
 // // optional chaining can work on methods todo
-// console.log(restaurant.order?.(0,2) ?? 'method doesnt exist'); 
-// console.log(restaurant.orderNci?.(0, 2) ?? 'method doesnt exist'); 
+// console.log(restaurant.order?.(0,2) ?? 'method doesnt exist');
+// console.log(restaurant.orderNci?.(0, 2) ?? 'method doesnt exist');
 
 // optional chainig on arrays, WE CAN USE IT TO CHECK IF AN array is empty
 
@@ -403,20 +395,19 @@ const restaurant = {
 
 // console.log(openStr);
 
-
 // //*** propety values */
 // const values = Object.values(openingHours)
 // console.log(values);
 
 // *** property entries
 
-const entries = Object.entries(openingHours);
-// console.log(entries)
+// const entries = Object.entries(openingHours);
+// // console.log(entries)
 
-for (const [key, {open,close}] of entries){
-  // console.log(x);
-  console.log(`on ${key}, we open at ${open} and close at ${close}`);
-}
+// for (const [key, {open,close}] of entries){
+//   // console.log(x);
+//   console.log(`on ${key}, we open at ${open} and close at ${close}`);
+// }
 
 // Coding Challenge #2
 
@@ -441,51 +432,51 @@ BONUS: Create an object called 'scorers' which contains the names of the players
 GOOD LUCK 😀
 */
 
-const game = {
-  team1: 'Bayern Munich',
-  team2: 'Borrussia Dortmund',
-  players: [
-    [
-      'Neuer',
-      'Pavard',
-      'Martinez',
-      'Alaba',
-      'Davies',
-      'Kimmich',
-      'Goretzka',
-      'Coman',
-      'Muller',
-      'Gnarby',
-      'Lewandowski',
-    ],
-    [
-      'Burki',
-      'Schulz',
-      'Hummels',
-      'Akanji',
-      'Hakimi',
-      'Weigl',
-      'Witsel',
-      'Hazard',
-      'Brandt',
-      'Sancho',
-      'Gotze',
-    ],
-  ],
-  score: '4:0',
-  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
-  date: 'Nov 9th, 2037',
-  odds: {
-    team1: 1.33,
-    x: 3.25,
-    team2: 6.5,
-  },
+// const game = {
+//   team1: 'Bayern Munich',
+//   team2: 'Borrussia Dortmund',
+//   players: [
+//     [
+//       'Neuer',
+//       'Pavard',
+//       'Martinez',
+//       'Alaba',
+//       'Davies',
+//       'Kimmich',
+//       'Goretzka',
+//       'Coman',
+//       'Muller',
+//       'Gnarby',
+//       'Lewandowski',
+//     ],
+//     [
+//       'Burki',
+//       'Schulz',
+//       'Hummels',
+//       'Akanji',
+//       'Hakimi',
+//       'Weigl',
+//       'Witsel',
+//       'Hazard',
+//       'Brandt',
+//       'Sancho',
+//       'Gotze',
+//     ],
+//   ],
+//   score: '4:0',
+//   scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+//   date: 'Nov 9th, 2037',
+//   odds: {
+//     team1: 1.33,
+//     x: 3.25,
+//     team2: 6.5,
+//   },
 
-  printGoals(...players) {
-    console.log(players);
-    console.log(`${players.length} goals were scored`);
-  },
-};
+//   printGoals(...players) {
+//     console.log(players);
+//     console.log(`${players.length} goals were scored`);
+//   },
+// };
 
 // const [goal, playerName] = game.scored.entries();
 //  1.
@@ -504,34 +495,98 @@ const game = {
 
 // 3.
 
-for (const [team, odd] of Object.entries(game.odds)){
-  const teamStr = team === 'x' ? 'draw' : `Victory ${game[team]}` //conditional statement for team name
-  console.log(`Odd of ${teamStr}: ${odd}`);
-}
+// for (const [team, odd] of Object.entries(game.odds)){
+//   const teamStr = team === 'x' ? 'draw' : `Victory ${game[team]}` //conditional statement for team name
+//   console.log(`Odd of ${teamStr}: ${odd}`);
+// }
 
-//  bonus
-const scorers = {};
-for (const player of game.scored) {
-  console.log(player);
+// //  bonus
+// const scorers = {};
+// for (const player of game.scored) {
+//   console.log(player);
 
-  scorers[player] ? scorers[player]++ : (scorers[player] = 1);
+//   scorers[player] ? scorers[player]++ : (scorers[player] = 1);
 
-}
+// }
 
-console.log(scorers);
+// console.log(scorers);
 
+//  TODO: Set
 
+// *** Sets are a collection of uynique values. they are iterables like arrays, but the other of the elements in a set doesnt matter
 
+const playerSet = new Set([
+  'Martinez',
+  'Alaba',
+  'Davies',
+  'Kimmich',
+  'Goretzka',
+  'Coman',
+  'Davies',
+  'Kimmich',
+  'Goretzka',
+  'Kimmich',
+  'Goretzka',
+  'Coman',
+  'Martinez',
+  'Alaba',
+  'Davies',
+  'Alaba',
+  'Davies',
+  'Kimmich',
+  'Goretzka',
+  'Coman',
+  'Davies',
+  'Kimmich',
+  'Goretzka',
+]);
 
+// const playerSet = new Set([
+//   'Pasta',
+//   'Pizza',
+//   'Pizza',
+//   'Risotto',
+//   'Pasta',
+//   'Pizza',
+// ]);
 
+console.log(playerSet);
 
+// todo: sets and map are new data structures introduced to JS in es6
+// *** How to work with sets
 
+console.log(playerSet.size); // getting the size of a sets
 
+console.log(playerSet.has('Kimmich')); //check if a certain element is in the set
+console.log(playerSet.has('Messi'));
 
+playerSet.add('Messi'); //add new element
+// playerSet.delete('Davies');
+// playerSet.clear(); //the clear method will delete all of the set's element
+console.log(playerSet);
 
+// *** there is no way to get data out of a set, like you can retrive data from arrays
 
+for (const order of playerSet) console.log(order);
 
+// *** in a codebase, the main usecase of sets is to remove duplicate values in an array
+// if we want an array that contains only each unique element
+const order = ['Pasta', 'Pizza', 'Pizza', 'Risotto', 'Pasta', 'Pizza'];
+const orderUnique = [...new Set(order)]; //the spread operator will work on sets too, since itan iterable
+console.log(orderUnique);
 
+//  TODO: maps
+// **A map is a data structure that wee can use to map values to KeyS, so just like in objest data in maps are stored in key:value pairs
 
+const rest = new Map();
+rest
+  .set('name', 'Israel Adefidipe')
+  .set('age', 24)
+  .set(true, `I'm a great guy`)
+  .set(false, "I'm am no1");
 
-
+  console.log(rest.get(true)); //retrive keys from the mapo
+  console.log(rest.has('age')); //to check if a certainkey is in the map
+  rest.delete('age')
+console.log(rest.size); // maps also have the size property
+// rest.clear();  //to clear all the elements
