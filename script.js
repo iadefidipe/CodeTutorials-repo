@@ -550,43 +550,55 @@ const playerSet = new Set([
 //   'Pizza',
 // ]);
 
-console.log(playerSet);
+// console.log(playerSet);
 
 // todo: sets and map are new data structures introduced to JS in es6
 // *** How to work with sets
 
-console.log(playerSet.size); // getting the size of a sets
+// console.log(playerSet.size); // getting the size of a sets
 
-console.log(playerSet.has('Kimmich')); //check if a certain element is in the set
-console.log(playerSet.has('Messi'));
+// console.log(playerSet.has('Kimmich')); //check if a certain element is in the set
+// console.log(playerSet.has('Messi'));
 
-playerSet.add('Messi'); //add new element
-// playerSet.delete('Davies');
-// playerSet.clear(); //the clear method will delete all of the set's element
-console.log(playerSet);
+// playerSet.add('Messi'); //add new element
+// // playerSet.delete('Davies');
+// // playerSet.clear(); //the clear method will delete all of the set's element
+// console.log(playerSet);
 
 // *** there is no way to get data out of a set, like you can retrive data from arrays
 
-for (const order of playerSet) console.log(order);
+// for (const order of playerSet) console.log(order);
 
 // *** in a codebase, the main usecase of sets is to remove duplicate values in an array
 // if we want an array that contains only each unique element
-const order = ['Pasta', 'Pizza', 'Pizza', 'Risotto', 'Pasta', 'Pizza'];
-const orderUnique = [...new Set(order)]; //the spread operator will work on sets too, since itan iterable
-console.log(orderUnique);
+// const order = ['Pasta', 'Pizza', 'Pizza', 'Risotto', 'Pasta', 'Pizza'];
+// const orderUnique = [...new Set(order)]; //the spread operator will work on sets too, since itan iterable
+// console.log(orderUnique);
 
 //  TODO: maps
 // **A map is a data structure that wee can use to map values to KeyS, so just like in objest data in maps are stored in key:value pairs
 
-const rest = new Map();
-rest
-  .set('name', 'Israel Adefidipe')
-  .set('age', 24)
-  .set(true, `I'm a great guy`)
-  .set(false, "I'm am no1");
+// const rest = new Map();
+// rest
+//   .set('name', 'Israel Adefidipe') //to add elements to the data structure
+//   .set('age', 24)
+//   .set(true, `I'm a great guy`)
+//   .set(false, "I'm am no1");
 
-  console.log(rest.get(true)); //retrive keys from the mapo
-  console.log(rest.has('age')); //to check if a certainkey is in the map
-  rest.delete('age')
-console.log(rest.size); // maps also have the size property
-// rest.clear();  //to clear all the elements
+//   console.log(rest.get(true)); //retrive keys from the mapo
+//   console.log(rest.has('age')); //to check if a certainkey is in the map
+//   rest.delete('age')
+// console.log(rest.size); // maps also have the size property
+// // rest.clear();  //to clear all the elements
+
+// // *** Map iteration
+// convert object to map
+
+// * 1. how to populate a map without using the set method
+const story = new Map (
+  ['question', 'is folar a coder'],
+  [1, 'yes'],
+  [2,'no']
+)
+
+console.log(story);
